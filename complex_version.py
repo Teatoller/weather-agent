@@ -1,6 +1,9 @@
 # complex_version.py
 # A simple version of the weather program that just prints the current weather for a given location.
 import os
+from typing import Annotated, Sequence, TypedDict
+from langchain_core.messages import BaseMessage
+from langgraph.graph.message import add_messages
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
@@ -21,7 +24,10 @@ llm = ChatOllama(model="llama3.2", temperature=0)
 
 # ─────────────────────────────────────────────────────────────────────────────
 
-
+# Add state for the agent to keep track of messages
+class AgentState(TypedDict):
+    """State of the agent."""
+    messages: Annotated[Sequence[BaseMessage], add_messages]  # List of (role, content) tuples
 
 @tool
 def get_current_weather(location: str) -> str:
