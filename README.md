@@ -74,9 +74,21 @@ The agent supports Google Gemini as an alternative LLM. To use it:
 
 ## Usage
 
-Run the simple version of the agent:
+Both scripts prompt you for a location and return the current weather. Run whichever version you prefer:
+
+**Simple version** — prebuilt agent, minimal setup:
 ```bash
 python simple_version.py
+```
+
+**Complex version** — manually constructed StateGraph with full control over agent flow:
+```bash
+python complex_version.py
+```
+
+Both will prompt you to enter a location:
+```
+Enter a location to get the current weather: Nairobi
 ```
 
 ## Example Output
@@ -85,7 +97,7 @@ python simple_version.py
 Simple Weather Agent
 ============================================================
 
-Question: What is the current weather in Nairobi?
+Question: What is the current weather in Tokyo?
 ------------------------------------------------------------
 Response: According to the Japan Meteorological Agency, the current weather conditions in Tokyo are:
 
