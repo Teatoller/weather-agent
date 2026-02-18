@@ -104,7 +104,7 @@ python simple_version.py
 Simple Weather Agent
 ============================================================
 
-Question: What is the current weather in Nairobi?
+Question: What is the current weather in Tokyo?
 ------------------------------------------------------------
 Response: According to the Japan Meteorological Agency, the current weather conditions in Tokyo are:
 
