@@ -86,6 +86,11 @@ python simple_version.py
 python complex_version.py
 ```
 
+Demo
+```bash
+python complex_version.py --demo
+```
+
 Both will prompt you to enter a location:
 ```
 Enter a location to get the current weather: Nairobi
