@@ -34,6 +34,25 @@ This project demonstrates a weather agent that leverages language models to prov
    
    # Activate it
    source venv/bin/activate
+   ```
+
+3. **Pull the model**
+   
+   ```bash
+   ollama pull llama3.2
+   ```
+
+4. **Install Python dependencies**
+   
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Deactivate the virtual environment (when done)**
+   
+   ```bash
+   deactivate
+   ```
 ```
 
 3. **Pull the model**
@@ -85,7 +104,7 @@ python simple_version.py
 Simple Weather Agent
 ============================================================
 
-Question: What is the current weather in Nairobi?
+Question: What is the current weather in Tokyo?
 ------------------------------------------------------------
 Response: According to the Japan Meteorological Agency, the current weather conditions in Tokyo are:
 
