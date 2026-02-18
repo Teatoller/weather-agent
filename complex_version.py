@@ -24,8 +24,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# ── Pick ONE of the two LLM blocks below ───────────────────────────────────
+# Initialize the language model
+# 1) Ollama (local, no API key needed)
 from langchain_ollama import ChatOllama
 llm = ChatOllama(model="llama3.2", temperature=0)
+
+# 2) Google Gemini
+# from langchain_google_genai import ChatGoogleGenerativeAI
+# llm = ChatGoogleGenerativeAI(model="models/gemini-2.0-flash", temperature=0,
+#                              google_api_key=os.getenv("GOOGLE_API_KEY"))
+
+# ─────────────────────────────────────────────────────────────────────────────
 
 class AgentState(TypedDict):
     """State of the agent - just the message history."""
