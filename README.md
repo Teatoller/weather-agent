@@ -34,25 +34,6 @@ This project demonstrates a weather agent that leverages language models to prov
    
    # Activate it
    source venv/bin/activate
-   ```
-
-3. **Pull the model**
-   
-   ```bash
-   ollama pull llama3.2
-   ```
-
-4. **Install Python dependencies**
-   
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-5. **Deactivate the virtual environment (when done)**
-   
-   ```bash
-   deactivate
-   ```
 ```
 
 3. **Pull the model**
@@ -93,9 +74,21 @@ The agent supports Google Gemini as an alternative LLM. To use it:
 
 ## Usage
 
-Run the simple version of the agent:
+Both scripts prompt you for a location and return the current weather. Run whichever version you prefer:
+
+**Simple version** — prebuilt agent, minimal setup:
 ```bash
 python simple_version.py
+```
+
+**Complex version** — manually constructed StateGraph with full control over agent flow:
+```bash
+python complex_version.py
+```
+
+Both will prompt you to enter a location:
+```
+Enter a location to get the current weather: Nairobi
 ```
 
 ## Example Output
