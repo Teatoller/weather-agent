@@ -2,8 +2,26 @@
 # A simple version of the weather program that just prints the current weather for a given location.
 import os
 from langchain_core.tools import tool
-from langchain_ollama import ChatOllama
 from langgraph.prebuilt import create_react_agent
+from dotenv import load_dotenv
+
+ # Load environment variables from .env file
+load_dotenv()
+
+# ── Pick ONE of the two LLM blocks below ───────────────────────────────────
+# Initialize the language model
+# 1) Ollama (local, no API key needed)
+from langchain_ollama import ChatOllama
+llm = ChatOllama(model="llama3.2", temperature=0)
+
+# 2) Google Gemini
+# from langchain_google_genai import ChatGoogleGenerativeAI
+# llm = ChatGoogleGenerativeAI(model="models/gemini-2.0-flash", temperature=0,
+#                              google_api_key=os.getenv("GOOGLE_API_KEY"))
+
+# ─────────────────────────────────────────────────────────────────────────────
+
+
 
 @tool
 def get_current_weather(location: str) -> str:
@@ -16,10 +34,6 @@ def create_weather_agent():
     """Create an agent that can fetch weather data."""
     # This function is a placeholder for creating an agent that can fetch weather data.
     # In a real implementation, you would set up the agent with the necessary tools and APIs.
-    llm = ChatOllama(
-        model="llama3.2",
-        temperature=0,
-        )
     # Create the agent with the tool to get current weather.
     agent_tools = create_react_agent(
         model=llm,
